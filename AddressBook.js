@@ -171,15 +171,20 @@ try
         )
       );
 
-      //UC6 Reduce function to find total of contacts in Address Book
-var ContactsPresenceTotal = 0;
-function findTotalContacts(ContactsArray) 
+      // check for duplicate Person details
+let CountDuplicate = 0;
+function CheckDuplicatesCount(contact_book) 
 {
-  if (ContactsArray != null) ContactsPresenceTotal++;
-  return ContactsPresenceTotal;
+  if (contact_book.firstName == "reena") CountDuplicate++;
+  return CountDuplicate;
 }
-ContactsArray.reduce(findTotalContacts, 1);
-console.log("--Total Contacts Present in the AddressBookMaster array--: " +ContactsPresenceTotal);
+
+//using foreach checking the count for each contact
+ContactsArray.forEach((contact_book) => CheckDuplicatesCount(contact_book));
+if (CountDuplicate == 1)
+  console.log( "--It is Duplicate Entry--" );
+else
+  console.log( "--It is not Duplicate Entry--" );
 } catch (e) 
 {
   console.log(e);
