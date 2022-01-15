@@ -170,10 +170,20 @@ try
         "91 3333333333", "priyanka@gmail.com"
         )
       );
-      ContactsArray.forEach((contact_book) =>
-        console.log(contact_book.toString())
-      );
-    } catch (e) 
-    {
-      console.log(e);
-    }
+
+     //printing array before updating
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+
+  //finding contact using name
+  let check = ContactsArray.findIndex(
+    (contact_book) => contact_book.firstName == "Rita"
+  );
+  //updating the contact detail
+  ContactsArray[check].phoneNumber = "91 7083280401";
+
+  //displaying contacts after being updated
+  console.log("--------After Updating pnoneNumber Contacts are--------------");
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+} catch (e) {
+  console.log(e);
+}
