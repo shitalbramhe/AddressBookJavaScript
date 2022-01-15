@@ -171,20 +171,16 @@ try
         )
       );
 
-      //Search By City
-  console.log("\n------------ Search To get Contact by City Nagpur---------------------");
-  function ContactByCity(contact_book) 
-  {
-    if (contact_book.city == "Nagpur") console.log(contact_book.toString());
-  }
-  ContactsArray.filter(ContactByCity);
-
-  //Search By State
-  console.log( "----------------Search Contact By State Maharashtra----------------");
-  let statecontact = ContactsArray.filter((contact_book) => contact_book.state.includes("Maharashtra")
-  );
-  console.log(statecontact.toString());
-} catch (e) 
+   // UC9 - Ability to View Person by City or State
+function StateMap(Details)
 {
-  console.log(e);
+  return Details.state + "    " + Details.firstName + "      " + Details.lastName;
+}
+let addressStateMap = ContactsArray.map(StateMap);
+console.log(addressStateMap);
+}
+
+catch (e) 
+{
+console.log(e);
 }
