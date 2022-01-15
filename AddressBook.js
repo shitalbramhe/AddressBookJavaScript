@@ -178,12 +178,11 @@ try
   let check = ContactsArray.findIndex(
     (contact_book) => contact_book.firstName == "Rita"
   );
-  //updating the contact detail
-  ContactsArray[check].phoneNumber = "91 7083280401";
-
-  //displaying contacts after being updated
-  console.log("--------After Updating pnoneNumber Contacts are--------------");
-  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
-} catch (e) {
+  //UC5 Removing an element from an array at an  index
+ContactsArray.splice(check, 1);
+console.log("----------------------Contacts after Being Deleted from the array---------------------------------");
+ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+} catch (e) 
+{
   console.log(e);
 }
